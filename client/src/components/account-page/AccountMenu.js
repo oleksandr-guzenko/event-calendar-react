@@ -14,13 +14,8 @@ export class AccountMenu extends Component {
                 </Link>
             </li>
             <li className="nav-item">
-                <Link className={classnames('nav-link', {'active': action === 'cancel-event'})} to="/account/cancel-event">
-                    <span className="fa fa-calendar-minus-o"></span><span className="d-md-inline d-none">&nbsp; Cancel Event</span>
-                </Link>
-            </li>
-            <li className="nav-item">
-                <Link className={classnames('nav-link', {'active': action === 'amend-event'})} to="/account/amend-event">
-                    <span className="fa fa-edit"></span><span className="d-md-inline d-none">&nbsp; Amend Event</span>
+                <Link className={classnames('nav-link', {'active': action === 'manage-event'})} to="/account/manage-event">
+                    <span className="fa fa-calendar-minus-o"></span><span className="d-md-inline d-none">&nbsp; Manage Events</span>
                 </Link>
             </li>
             <li className="nav-item">
@@ -34,23 +29,13 @@ export class AccountMenu extends Component {
                 </Link>
             </li>
             <li className="nav-item">
-                <Link className={classnames('nav-link', {'active': action === 'create-user'})} to="/account/create-user">
-                    <span className="fa fa-user-plus"></span><span className="d-md-inline d-none">&nbsp; Create New User</span>
+                <Link className={classnames('nav-link', {'active': action === 'create-account'})} to="/account/create-account">
+                    <span className="fa fa-user-plus"></span><span className="d-md-inline d-none">&nbsp; Create New Account</span>
                 </Link>
             </li>
             <li className="nav-item">
-                <Link className={classnames('nav-link', {'active': action === 'create-admin'})} to="/account/create-admin">
-                    <span className="fa fa-users"></span><span className="d-md-inline d-none">&nbsp; Create New Admin</span>
-                </Link>
-            </li>
-            <li className="nav-item">
-                <Link className={classnames('nav-link', {'active': action === 'disable-user'})} to="/account/disable-user">
-                    <span className="fa fa-user-times"></span><span className="d-md-inline d-none">&nbsp; Disable User Account</span>
-                </Link>
-            </li>
-            <li className="nav-item">
-                <Link className={classnames('nav-link', {'active': action === 'disable-admin'})} to="/account/disable-admin">
-                    <span className="fa fa-times-circle pr-1"></span><span className="d-md-inline d-none">&nbsp; Disable Admin Account</span>
+                <Link className={classnames('nav-link', {'active': action === 'disable-account'})} to="/account/disable-account">
+                    <span className="fa fa-user-times"></span><span className="d-md-inline d-none">&nbsp; Disable Accounts</span>
                 </Link>
             </li>
         </ul>

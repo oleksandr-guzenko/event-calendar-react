@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class AmendEvent extends Component {
+export class ManageEvent extends Component {
   render() {
     return (
         <div className="pl-3 pr-3">
@@ -61,4 +61,4 @@ export class AmendEvent extends Component {
   }
 }
 
-export default AmendEvent
+export default ManageEvent
