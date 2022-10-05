@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Header from './components/layouts/Header';
 import AccountPage from './components/account-page/AccountPage';
+import Dashboard from './components/dashboard/Dashboard';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/account/:action" component={AccountPage} />
+            <Route exact path="/" component={Dashboard} />
           </div>
         </Router>
     );

@@ -1,0 +1,11 @@
+{
+  "name": "event-calendar-server",
+  "version": "1.0.0",
+  "description": "This is NodeJs backend for event calendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergii Hrechyshnikov",
+  "license": "ISC"
+}

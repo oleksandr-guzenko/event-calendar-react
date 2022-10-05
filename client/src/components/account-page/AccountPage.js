@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import AccountMenu from './AccountMenu';
-import CreateEvent from './CreateEvent';
+import CreateEvent from './create-events/CreateEvent';
 import CancelEvent from './CancelEvent';
 import AmendEvent from './AmendEvent';
 import SubmittedEvents from './SubmittedEvents';

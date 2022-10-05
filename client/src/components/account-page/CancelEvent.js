@@ -7,15 +7,15 @@ export class CancelEvent extends Component {
   render() {
     return (
       <div className="pl-3 pr-3">
-        <div class="modal" id="myModal">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-body">
+        <div className="modal" id="myModal">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-body">
               Are you sure you want to cancel?
               <div className="clearfix">
                 <div className="float-right">
-                  <button type="button" class="btn btn-success mr-1" data-dismiss="modal">Yes <span className="fa fa-check"></span></button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">No <span className="fa fa-times"></span></button>
+                  <button type="button" className="btn btn-success mr-1" data-dismiss="modal">Yes <span className="fa fa-check"></span></button>
+                  <button type="button" className="btn btn-danger" data-dismiss="modal">No <span className="fa fa-times"></span></button>
                 </div>
               </div>
               </div>

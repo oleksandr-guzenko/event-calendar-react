@@ -5,9 +5,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
-    "jquery": "^3.6.1",
+    "jquery": "npm:jQuery@^1.7.4",
     "jQuery": "^1.7.4",
     "jwt-decode": "^2.2.0",
+    "moment": "^2.29.4",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-google-charts": "^4.0.0",
@@ -19,7 +20,9 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "socket.io-client": "^4.5.2",
-    "sweetalert2": "^11.4.33"
+    "sweetalert2": "^11.4.33",
+    "time-zone-converter": "^1.1.0",
+    "timezone-select-js": "^1.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

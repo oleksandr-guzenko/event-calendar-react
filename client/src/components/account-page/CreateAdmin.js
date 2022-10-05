@@ -13,11 +13,11 @@ export class CreateAdmin extends Component {
                 <label htmlFor="email">Email <span className="text-danger">*</span></label>
                 <input type="email" name="email" id="email" className="form-control" />
             </div>
-            <div class="form-group">
+            <div className="form-group">
                 <label htmlFor="account-type">Account Type</label>
-                <select class="form-control" id="account-type">
-                <option value="user">User</option>
-                <option value="admin" selected>Admin</option>
+                <select className="form-control" id="account-type">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
                 </select>
             </div>
             <button className="btn btn-primary">Create New Admin <span className="fa fa-users"></span></button>
