@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import classnames from 'classnames';
+import {useSelector} from 'react-redux';
 
-export class AccountMenu extends Component {
-  render() {
-    const action = this.props.action;
+function AccountMenu(props) {
+    const action = props.action;
+    const { user } = useSelector(state => state.auth)
 
     return (
         <ul className="nav flex-column nav-pills border-right">
@@ -28,19 +29,22 @@ export class AccountMenu extends Component {
                     <span className="fa fa-angle-double-left pr-2"></span><span className="d-md-inline d-none">&nbsp; List Previous Events</span>
                 </Link>
             </li>
-            <li className="nav-item">
-                <Link className={classnames('nav-link', {'active': action === 'create-account'})} to="/account/create-account">
-                    <span className="fa fa-user-plus"></span><span className="d-md-inline d-none">&nbsp; Create New Account</span>
-                </Link>
-            </li>
-            <li className="nav-item">
-                <Link className={classnames('nav-link', {'active': action === 'disable-account'})} to="/account/disable-account">
-                    <span className="fa fa-user-times"></span><span className="d-md-inline d-none">&nbsp; Disable Accounts</span>
-                </Link>
-            </li>
+            { user.role !== 'User' && (
+                <>
+                    <li className="nav-item">
+                        <Link className={classnames('nav-link', {'active': action === 'create-account'})} to="/account/create-account">
+                            <span className="fa fa-user-plus"></span><span className="d-md-inline d-none">&nbsp; Create New Account</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className={classnames('nav-link', {'active': action === 'disable-account'})} to="/account/disable-account">
+                            <span className="fa fa-user-times"></span><span className="d-md-inline d-none">&nbsp; Disable Accounts</span>
+                        </Link>
+                    </li>
+                </>
+            )}
         </ul>
     )
-  }
 }
 
 export default AccountMenu

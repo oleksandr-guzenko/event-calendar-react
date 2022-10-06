@@ -1,18 +1,28 @@
-import { ERRORS } from '../actions/types';
+import {
+  ERRORS,
+  NO_ERRORS
+} from '../actions/types'
 
 const initialState = {
-    errors: {}
+  errors: {}
 }
 
-export default function(state = initialState, action) {
-    switch(action.type) {
-        case ERRORS: 
-            return {
-                ...state,
-                errors: action.payload
-            }
+export default (state = initialState, { type, payload }) => {
+  switch (type) {
 
-        default: 
-            return state
+  case ERRORS:
+    return { 
+      ...state, 
+      errors: payload
     }
+
+  case NO_ERRORS:
+    return {
+      ...state,
+      errors: {}
+    }
+
+  default:
+    return state
+  }
 }
