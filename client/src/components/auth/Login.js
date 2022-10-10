@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import classnames from "classnames";
+import { Link } from "react-router-dom";
 
 import {  login } from '../../actions/authActions';
 
@@ -28,12 +29,12 @@ const Login = (props) => {
         </div>
         <div className="form-group">
           <label htmlFor="password">Password <span className="text-danger">*</span></label>
-          <input type="password" name="password" id="password" className={classnames('form-control', {'border-danger': errors.password})} 
+          <input type="password" name="password" id="password" className={classnames('form-control', {'border-danger': errors.password})}
             onChange={e => setPassword(e.target.value)} />
           { errors.password && <p className="text-danger">{errors.password}</p> }
         </div>
           <button className="btn btn-primary btn-lg btn-block" onClick={onSubmit}>Sign In <span className="fa fa-sign-in"></span></button>
-        <div className="mt-3"><a href="/forgotPassword" onClick={e => e.preventDefault()}>Forgot Your Password?</a></div>
+        <div className="mt-3"><Link to="/forgot-password">Forgot Your Password?</Link></div>
       </div>
     </div>
   )

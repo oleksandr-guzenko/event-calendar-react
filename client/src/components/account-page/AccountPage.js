@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 import AccountMenu from './AccountMenu';
 import CreateEvent from './create-events/CreateEvent';
 import ManageEvent from './manage-event/ManageEvent';
-import SubmittedEvents from './SubmittedEvents';
-import PrevEvents from './PrevEvents';
+import SubmittedEvents from './submitted-events/SubmittedEvents';
+import PrevEvents from './prev-events/PrevEvents';
 import CreateAccount from './create-account/CreateAccount';
-import DisableAccount from './DisableAccount';
+import DisableAccount from './manage-accounts/DisableAccount';
 
 export class AccountPage extends Component {
   render() {

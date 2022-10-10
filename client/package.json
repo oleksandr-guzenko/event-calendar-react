@@ -20,7 +20,8 @@
     "socket.io-client": "^4.5.2",
     "sweetalert2": "^11.4.33",
     "time-zone-converter": "^1.1.0",
-    "timezone-select-js": "^1.0.3"
+    "timezone-select-js": "^1.0.3",
+    "uuidv4": "^6.2.13"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -26,6 +26,7 @@ app.use(bodyParser.json());
 
 app.use("/accounts", routes.accounts);
 app.use("/auth", routes.auth);
+app.use("/events", routes.events);
 
 const port = process.env.PORT || 5000;
 

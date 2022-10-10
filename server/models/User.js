@@ -25,6 +25,23 @@ const UserSchema = new Schema({
     verified: {
         type: Boolean,
         default: false
+    },
+    events: [
+        {
+            type: Schema.Types.ObjectId,
+            required: true,
+            ref: 'events'
+        }
+    ],
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'users'
+    },
+    reset_password: {
+        type: String,
+        required: true,
+        default: ''
     }
 });
 

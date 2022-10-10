@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const { v4: uuidv4 } = require('uuid');
 
-const authValidator = require('../validator/auth/authValidator');
+const authValidator = require('../validator/authValidator');
 const keys = require("../config/keys");
 
 const User = require('../models/User');
@@ -12,7 +13,6 @@ module.exports = {
     login: (req, res) => {
         const { errors, isValid } = authValidator.login(req.body);
 
-        console.log(errors, isValid);
         if(!isValid) return res.status(400).json(errors);
 
         User
@@ -42,7 +42,7 @@ module.exports = {
                             expiresIn: 3600
                             },
                             (err, token) => {
-                            res.json({ token });
+                            res.json({ token: 'Bearer ' + token });
                             }
                         );
                         } else {
@@ -84,5 +84,40 @@ module.exports = {
             .findById(req.params.id)
             .then(user => res.json({verified: user.verified}))
             .catch(err => console.log(err));
+    },
+
+    resetPassword: (req, res) => {
+        User
+            .findOne({reset_password: req.params.id})
+            .then(user => {
+                bcrypt.genSalt(10, (err, salt) => {
+                    bcrypt.hash(req.body.password, salt, (err, hash) => {
+                      if (err) throw err;
+                      user.password = hash;
+                      user.reset_password = '';
+
+                      user
+                        .save()
+                        .then(savedUser => res.json(savedUser))
+                        .catch(err => console.log(err));
+                    });
+                });
+            })
+            .catch(err => console.log(err));
+    },
+
+    sendEmail: (req, res) => {
+        User
+            .findOne({email: req.body.email})
+            .then(user => {
+                const uid = uuidv4();
+
+                user.reset_password = uid;
+
+                user
+                    .save()
+                    .then(savedUser => res.json(uid))
+                    .catch(err => console.log(err))
+            })
     }
 }

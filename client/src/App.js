@@ -13,7 +13,10 @@ import Login from './components/auth/Login';
 import Verify from './components/auth/Verify';
 import Header from './components/layouts/Header';
 import AccountPage from './components/account-page/AccountPage';
+import EditAccount from './components/account-page/create-account/EditAccount';
+import EditEvent from './components/account-page/create-events/EditEvent';
 import Dashboard from './components/dashboard/Dashboard';
+import ForgotPassword from "./components/auth/ForgotPassword";
 
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -44,7 +47,10 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/verify/:id" component={Verify} />
             <PrivateRoute exact path="/account/:action" component={AccountPage} />
+            <PrivateRoute exact path="/accounts/:id/edit" component={EditAccount} />
+            <PrivateRoute exact path="/events/:id/edit" component={EditEvent} />
             <Route exact path="/" component={Dashboard} />
+            <Route exact path="/forgot-password" component={ForgotPassword} />
           </div>
         </Router>
       </Provider>

@@ -40,9 +40,9 @@ export class Calendar extends Component {
                 <td></td>
                 <td></td>
                 <td className="p-0">
-                    <ul class="list-group">
-                        <li class="list-group-item text-center pt-1 pb-1 bg-dark text-white">1</li>
-                        <li class="list-group-item p-0 bg-dark">
+                    <ul className="list-group">
+                        <li className="list-group-item text-center pt-1 pb-1 bg-dark text-white">1</li>
+                        <li className="list-group-item p-0 bg-dark">
                             <div className="row m-0">
                                 <div className="col-lg-3 col-md-4 rounded bg-info text-white p-1" style={{overflowX: 'hidden'}}>asda sadasd</div>
                                 <div className="col-lg-3 col-md-4 rounded bg-primary text-white p-1" style={{overflowX: 'hidden'}}>asdas asdasd</div>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom';
 import classnames from 'classnames';
 import {useSelector} from 'react-redux';
@@ -38,7 +38,7 @@ function AccountMenu(props) {
                     </li>
                     <li className="nav-item">
                         <Link className={classnames('nav-link', {'active': action === 'disable-account'})} to="/account/disable-account">
-                            <span className="fa fa-user-times"></span><span className="d-md-inline d-none">&nbsp; Disable Accounts</span>
+                            <span className="fa fa-gears"></span><span className="d-md-inline d-none">&nbsp; Manage Accounts</span>
                         </Link>
                     </li>
                 </>
